@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>¿Hasta dónde puedo salir con mis hijos?</title>
+    <meta name="description" content="¿Hasta dónde puedo salir con mis hijos durante el confinamiento?">
+    <meta name="keywords" content="COVID-19, Confinamiento, Lockdown">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <style>
+      html, body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      #map {
+        /* configure the size of the map */
+        width: 100%;
+        height: 100%;
+      }
+
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 20px;
+        padding-left: 10px;
+        z-index: 1000;
+      }
+
+      .button{
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>  
+    <div id="floating-panel">
+        <p><b>Opciones:</b></p>
+        <p>1. Clica en el mapa</p> 
+        <p>2. Busca tu dirección -> Arriba a la derecha</p>
+        <p>3. Pulsa geolocalizar</p>
+        <input id="autogeoloc" class="button" type="button" value="Geolocalizame">
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

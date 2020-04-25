@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>¿Hasta dónde puedo salir con mis hijos?</title>
+    <meta name="description" content="¿Hasta dónde puedo salir con mis hijos durante el confinamiento?">
+    <meta name="keywords" content="COVID-19, Confinamiento, Lockdown">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 20px;
+        padding-left: 10px;
+      }
+
+      .button{
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="floating-panel">
+      <p><b>Opciones:</b></p>
+      <p>1. Clica en el mapa</p> 
+      <p>2. Busca tu dirección</p>
+      <p>3. Pulsa geolocalizar</p>
+      <input id="address" style="width:300px" type="textbox" value="Carrer de Sant Pere, 4, Mataró">
+      <input id="buscar" class="button" type="button" value="Buscar">
+      <input id="autogeoloc" class="button" type="button" value="Geolocalizame">
+    </div>
+    <div id="map"></div>
+    <script src="app.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnf4uQ92i7zI388p_BtTk0IhqLxuyxgFE&callback=initMap">
+    </script>
+  </body>
+</html>
