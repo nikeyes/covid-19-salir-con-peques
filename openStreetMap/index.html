@@ -38,35 +38,69 @@
         height: 100%;
       }
 
-      #floating-panel {
+      .button {
+        position:relative;
+        padding:6px 15px;
+        left:0px;
+        border:2px solid #207cca;
+        background-color:#053864;
+        color:#fafafa;
+      }
+      .button:hover  {
+        background-color:#fafafa;
+        color:#207cca;
+      }
+
+      .infobox{
         position: absolute;
-        top: 50px;
-        left: 25%;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 20px;
-        padding-left: 10px;
+        top: 35%;
+        left: 35%;
         z-index: 1000;
       }
 
-      .button{
-        display: block;
+      /* The alert message box */
+      .alert {
+        padding: 20px;
+        background-color: #f44336;
+        color: white;
+        opacity: 0.90;
+        transition: opacity 0.6s;
+        margin-bottom: 15px;
+      }
+
+      .alert.info {
+        background-color: #2196F3;
+      }
+
+      /* The close button */
+      .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      /* When moving the mouse over the close button */
+      .closebtn:hover {
+        color: black;
       }
     </style>
   </head>
   <body>
-    <div id="map"></div>  
-    <div id="floating-panel">
-        <p><b>Opciones:</b></p>
-        <p>1. Clica en el mapa</p> 
-        <p>2. Buscar Arriba</p>
-        <p>3. Pulsa geolocalizar</p>
+    <div id="map"></div>
+    <div class="infobox">
+      <div class="alert info">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        - Haz click en el mapa para seleccionar un punto </br>
+        - También puedes buscar una dirección </br>
+        - También puedo usar tú posición </br>
         <input id="autogeoloc" class="button" type="button" value="Geolocalizame">
-    </div>
+      </div>
+    </div>  
     <script src="app.js"></script>
   </body>
 </html>
