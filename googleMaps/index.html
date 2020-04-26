@@ -29,34 +29,83 @@
         padding: 0;
       }
 
-      #floating-panel {
+      .box {
         position: absolute;
-        top: 10px;
+        top: 85%;
         left: 25%;
         z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 20px;
-        padding-left: 10px;
       }
 
-      .button{
-        display: block;
+      .search {
+        padding:8px 15px;
+        background:rgba(50, 50, 50, 0.2);
+        border:0px solid #dbdbdb;
+      }
+      .button {
+        position:relative;
+        padding:6px 15px;
+        left:0px;
+        border:2px solid #207cca;
+        background-color:#207cca;
+        color:#fafafa;
+      }
+      .button:hover  {
+        background-color:#fafafa;
+        color:#207cca;
+      }
+
+      .infobox{
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        z-index: 5;
+      }
+
+      /* The alert message box */
+      .alert {
+        padding: 20px;
+        background-color: #f44336;
+        color: white;
+        opacity: 0.90;
+        transition: opacity 0.6s;
+        margin-bottom: 15px;
+      }
+
+      .alert.info {
+        background-color: #2196F3;
+      }
+
+      /* The close button */
+      .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      /* When moving the mouse over the close button */
+      .closebtn:hover {
+        color: black;
       }
     </style>
   </head>
   <body>
-    <div id="floating-panel">
-      <p><b>Opciones:</b></p>
-      <p>1. Clica en el mapa</p> 
-      <p>2. Busca tu dirección</p>
-      <p>3. Pulsa geolocalizar</p>
-      <input id="address" style="width:200px" type="textbox" value="Carrer de Sant Pere, 4, Mataró">
-      <input id="buscar" class="button" type="button" value="Buscar">
-      <input id="autogeoloc" class="button" type="button" value="Geolocalizame">
+    <div class="infobox">
+      <div class="alert info">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        - Haz click en el mapa para seleccionar un punto </br>
+        - También puedes buscar una dirección </br>
+        - También puedo usar tú posición
+      </div>
+    </div>
+    <div class="box">
+      <input id="address" type="text" class="search" placeholder="Buscar..." required/>
+      <input id="buscar" type="button" class="button" value="Search"/>
+      <input id="autogeoloc" type="button" class="button" value="Geolocalizame"/>
     </div>
     <div id="map"></div>
     <script src="app.js"></script>
